@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/root.css">
+    <link rel="stylesheet" href="./static/css/graph.css">
 
 
 
@@ -32,7 +33,8 @@
     <div class="zyyo-main">
         <div class="zyyo-left">
             <div class="logo" style="background-image: url(./static/img/logo.png);">
-                <img style="position: absolute;top:-15%;left:-10%;width: 120%; aspect-ratio: 1/1;"
+                <img style="position: absolute;top:-20%;left:-10%;width: 120%; aspect-ratio: 2.2/1;"
+                <img style="position: absolute;top:-20%;left:-0%;width: 120%; aspect-ratio: 2.4/1;"
                      src="./static/img/logokuang.png">
             </div>
 
@@ -72,10 +74,7 @@
 
         <div class="zyyo-right">
             <header>
-                <div class="index-logo" style="background-image: url(./static/img/logo.png);">
-                    <img style="position: absolute;top:-15%;left:-10%;width: 120%; aspect-ratio: 1/1;"
-                         src="./static/img/logokuang.png">
-                </div>
+
                 <div class="welcome">
                     Hello I' m <span class="gradientText"> forewillow </span>
                 </div>
@@ -116,9 +115,57 @@
                     </a>
                 </div>
                 <!-- 接下来是贪吃蛇页面小游戏 可以修改 -->
-                <div class="tanChiShe">
-                    <img id="tanChiShe" src="./static/svg/snake-Light.svg" alt="">
+                <!--<div class="tanChiShe">-->
+                    <!--<img id="tanChiShe" src="./static/svg/snake-Light.svg" alt="">-->
+                <!--</div>-->
+
+                <div class="image-slider">
+                    <div class="slider-container">
+                        <img src="static/img/projects/Phantom_1.png" alt="Image 1">
+                        <img src="static/img/projects/Phantom_2.png" alt="Image 2">
+                        <img src="static/img/projects/牧光人_1.png" alt="Image 3">
+                        <img src="static/img/projects/Boundman_1.png" alt="Image 4">
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                        <span class="dot" data-index="3"></span>
+                    </div>
                 </div>
+
+                <script>
+                    let index = 0;
+                    const images = document.querySelectorAll('.slider-container img');
+                    const sliderContainer = document.querySelector('.slider-container');
+                    const dots = document.querySelectorAll('.dot');
+                    const totalImages = images.length;
+
+                    function slideImages() {
+                        index++;
+                        if (index >= totalImages) {
+                            index = 0;
+                        }
+                        updateSlider();
+                    }
+
+                    function updateSlider() {
+                        sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+                        dots.forEach(dot => dot.classList.remove('active'));
+                        dots[index].classList.add('active');
+                    }
+
+                    let autoSlide = setInterval(slideImages, 3000);
+
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', function () {
+                            clearInterval(autoSlide);
+                            index = parseInt(this.getAttribute('data-index'));
+                            updateSlider();
+                            autoSlide = setInterval(slideImages, 3000);
+                        });
+                    });
+                </script>
             </header>
 
 
@@ -130,16 +177,6 @@
                     </svg>PROJECTS / 作品集
                 </div>
                 <div class="projectList">
-                    <a class="projectItem a" target="_blank" href="https://www.bootstrapmb.com">
-                        <div class="projectItemLeft">
-                            <h1>博客</h1>
-                            <p>记录摆烂日常录摆烂日常录摆烂日常录摆烂日常录摆烂日常录摆烂日常</p>
-                        </div>
-                        <div class="projectItemRight">
-                            <img src="./static/img/unity3d.png" alt="">
-                        </div>
-                    </a>
-
                     <a class="projectItem a" target="_blank" href="https://www.gcores.com/games/110301">
                         <div class="projectItemLeft">
                             <h1>邦邦怪——2023BOOOMLab</h1>
