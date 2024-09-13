@@ -52,7 +52,6 @@ tc_main[0].addEventListener('click', function (event) {
 });
 
 
-
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -80,32 +79,11 @@ function getCookie(name) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-
-
-
-
-
 
     var html = document.querySelector('html');
     var themeState = getCookie("themeState") || "Light";
     var tanChiShe = document.getElementById("tanChiShe");
-
-
-
-
 
 
     function changeTheme(theme) {
@@ -114,12 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         setCookie("themeState", theme, 365);
         themeState = theme;
     }
-
-
-
-
-
-
 
     var Checkbox = document.getElementById('myonoffswitch')
     Checkbox.addEventListener('change', function () {
@@ -133,30 +105,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
     if (themeState == "Dark") {
         Checkbox.checked = false;
     }
-
     changeTheme(themeState);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
 
     var fpsElement = document.createElement('div');
     fpsElement.id = 'fps';
@@ -198,15 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         step();
     })();
-    
- 
-    
-    
-    
 });
-
-
-
 
 var pageLoading = document.querySelector("#zyyo-loading");
 window.addEventListener('load', function() {
