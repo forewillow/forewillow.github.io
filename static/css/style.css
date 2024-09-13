@@ -486,18 +486,20 @@ body {
 }
 
 .projectList {
-    display: flex;
+    display: block;
+    width: 100%;           /* 让项目宽度占满一整行 */
+    margin-bottom: 20px;   /* 添加项目之间的间距 */
     flex-wrap: wrap;
 }
 
 .projectItem {
-    margin: 7px;
+    margin: 5px;
     display: flex;
     background-color: var(--item_bg_color);
     border-radius: 8px;
     padding: 15px;
     height: 95px;
-    width: calc(25% - 15px);
+    width: calc(100%);
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     -webkit-backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     transition: opacity 0.3s ease, background-color 0.3s ease, border 0.3s ease, transform 0.2s ease;
@@ -508,20 +510,20 @@ body {
 .projectItem {
     display: flex;
     background-color: var(--item_bg_color);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 15px;
-    height: 100px;
-    width: calc(25% - 15px);
+    height: 200px;
+    width: calc(100% - 30px);
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
-    transition: opacity 0.5s ease, background-color 0.2s ease, border 0.2s ease, transform 0.3s ease;
+    transition: opacity 0.5s ease, background-color 0.2s ease, border 0.2s ease, transform 0.3s ease , height 0.7s ease;
 
 }
 
 
 .projectItem:hover {
     box-shadow: 0 8px 16px -4px #2c2d300c;
-    transform: translateY(-2px);
-
+    height: 420px;
+    transition: height 0.3s ease;
 }
 
 .projectItem.pressed {
@@ -543,19 +545,19 @@ body {
 }
 
 .projectItem:hover h1 {
-    font-size: 18px;
+    font-size: 48px;
 }
 
 .projectItemLeft p {
-    font-size: 12px;
-    margin-top: 15px;
+    font-size: 24px;
+    margin-top: 20px;
     color: var(--item_left_text_color);
 }
 
 
 .projectItemLeft h1 {
-    font-weight: normal;
-    font-size: 16px;
+    font-weight: heavy;
+    font-size: 30px;
     margin: 0px;
 
     transition: font-size 0.4s ease;
@@ -581,8 +583,8 @@ body {
 
 .projectItemRight img {
 
-    height: 39px;
-    width: 39px;
+    height: 64px;
+    width: 64px;
 
 }
 
