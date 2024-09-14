@@ -488,18 +488,11 @@ body {
 .projectList {
     display: block;
     width: 100%;           /* 让项目宽度占满一整行 */
-    margin-bottom: 20px;   /* 添加项目之间的间距 */
+    margin-bottom: 40px;   /* 添加项目之间的间距 */
     flex-wrap: wrap;
 }
 
 .projectItem {
-    margin: 5px;
-    display: flex;
-    background-color: var(--item_bg_color);
-    border-radius: 8px;
-    padding: 15px;
-    height: 95px;
-    width: calc(100%);
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     -webkit-backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     transition: opacity 0.3s ease, background-color 0.3s ease, border 0.3s ease, transform 0.2s ease;
@@ -508,15 +501,14 @@ body {
 }
 
 .projectItem {
+    margin: 10px;
     display: flex;
     background-color: var(--item_bg_color);
     border-radius: 10px;
     padding: 15px;
     height: 200px;
-    width: calc(100% - 30px);
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     transition: opacity 0.5s ease, background-color 0.2s ease, border 0.2s ease, transform 0.3s ease , height 0.7s ease;
-
 }
 
 
@@ -532,8 +524,29 @@ body {
     background-color: var(--item_hover_color);
 }
 
+
 .projectItem:hover .projectItemLeft {
     width: 100%;
+}
+
+
+
+/* 初始状态下隐藏图片 */
+.hover-image {
+    opacity: 0; /* 鼠标悬停时完全显示 */
+    transform: scale(0.2) translateX(20px); /* 初始状态缩小 */
+    transform-origin: top left; /* 变换的原点设为左上角 */
+    width: auto; /* 图片的宽度，可以根据需要调整 */
+    border-radius: 15px; /* 边角圆润的半径，调整以获得所需的效果 */
+    height: 220px;
+    margin-top: 30px; /* 根据需要调整 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 设置过渡效果 */
+}
+
+.projectItem:hover .hover-image {
+    transform: scale(1) translateX(20px); /* 初始状态缩小 */
+    opacity: 1; /* 鼠标悬停时完全显示 */
+
 }
 
 .projectItem:hover .projectItemRight {
@@ -569,6 +582,10 @@ body {
     height: 100%;
     width: 80%;
 }
+
+
+
+
 
 
 .projectItemRight {
