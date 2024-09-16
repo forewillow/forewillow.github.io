@@ -67,6 +67,7 @@ html[data-theme="Dark"] {
     --item_bg_color: rgb(19, 20, 24);
     --item_hover_color: rgb(19, 23, 27);
     --item_left_title_color: rgb(255, 255, 255);
+    --team_member_bg_color: rgb(255, 255, 255);
     --item_left_text_color: rgb(142, 142, 142);
     --footer_text_color: #646464;
     --left_tag_item: linear-gradient(50deg, #1f2327, #000000);
@@ -170,7 +171,7 @@ body {
 
 .zyyo-left {
     overflow-y: scroll;
-    width: 230px;
+    width: 250px;
     height: 100vh;
     display: flex;
     padding: 0 15px;
@@ -189,12 +190,13 @@ body {
 
 .logo {
     flex-shrink: 0;
-    width: 90%;
+    width: 100%;
     position: relative;
     aspect-ratio: 1/1;
-    margin-top: 50px;
+    margin-top: 60px;
     background-size: cover;
     border-radius: 50%;
+    margin-bottom: 20px; /* 下方间距 */
 }
 
 
@@ -208,6 +210,39 @@ body {
     backdrop-filter: blur(var(--card_filter));
     -webkit-backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
+    display: flex;
+    flex-direction: column; /* 将子元素按列布局 */
+}
+
+.team-member {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 15px; /* 成员之间的间距 */
+    border-radius: 40px;
+    background-color: var(--team_member_bg_color); /* 自定义团队成员背景颜色 */
+    transition: background-color 0.3s ease;
+}
+
+.team-member:hover {
+    background-color: var(--team_member_hover_color); /* 悬停时背景变化 */
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    margin-right: 12px; /* 头像和名字之间的间距 */
+    object-fit: cover; /* 确保头像图片按比例显示 */
+}
+
+.member-info {
+    flex: 1; /* 使名字部分填满剩余空间 */
+}
+
+.member-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--member_name_color); /* 成员名字颜色 */
 }
 
 .left-des {
