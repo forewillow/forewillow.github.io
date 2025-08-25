@@ -1,0 +1,13 @@
+/* 模糊层 */
+.blur-center {
+  position: absolute;
+  top: 0;
+  left: 20%;           /* 左右留空百分比，可调整 */
+  width: 60%;          /* 中间宽度 = 100% - 左右留空 */
+  height: 100%;
+  backdrop-filter: blur(10px);        /* 高斯模糊 */
+  -webkit-backdrop-filter: blur(10px); /* Safari 兼容 */
+  pointer-events: none;               /* 不阻塞鼠标事件 */
+  z-index: 0;                         /* 在内容下方 */
+  background: rgba(255, 255, 255, 0.05); /* 可选，增加模糊感 */
+}
