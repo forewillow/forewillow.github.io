@@ -10,7 +10,7 @@ export default defineConfig({
     base: '/',
 	integrations: [
 		starlight({
-			title: 'ForeWillow的个人小站',
+			title: '个人学习记录',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/forewillow' }],
 
 			sidebar: [
@@ -19,7 +19,11 @@ export default defineConfig({
 				autogenerate: { directory: 'intro' }, // 自动把这个文件夹里的所有 md 塞进来
 				},
 				{
-				label: '简单->写实水面渲染', // 侧边栏显示的第二个大分类
+				label: '每月一张专辑', // 侧边栏显示的第二个大分类
+				autogenerate: { directory: 'music' }, 
+				},
+				{
+				label: '水面渲染学习', // 侧边栏显示的第二个大分类
 				autogenerate: { directory: 'water' }, 
 				},
 			],
